@@ -16,7 +16,6 @@
 !/log/.keep
 /tmp
 
-/config/secrets.yml
 /config/application.yml
 /config/databse.yml
 *.swp
