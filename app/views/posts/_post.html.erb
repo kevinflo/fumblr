@@ -6,7 +6,7 @@
   <% end %>
     <h2><%= post.title %></h2>
     <p><%= post.content %></p>
-    <small><%= post.created_at.to_time.strftime('%b %e at %I %M %p') %></small>
+    <small><%= link_to post.created_at.to_time.strftime('%b %e at %I %M %p'), user_path(post.user_id) %></small>
   </div>
   <% if user_signed_in? && post.user_id == current_user.id %>
     <div class="col-xs-2 text-right">
