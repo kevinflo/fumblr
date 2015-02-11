@@ -40,15 +40,15 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_mailer.default_url_options = { :host => Rails.application.secrets.APP_HOST }
+  config.action_mailer.default_url_options = { :host => ENV["APP_HOST"] }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
   config.action_mailer.smtp_settings = {
-    address:        Rails.application.secrets.SMTP_SERVER_ADDRESS,
-    port:           Rails.application.secrets.SMTP_SERVER_PORT.to_i,
-    user_name:      Rails.application.secrets.SMTP_SERVER_USERNAME,
-    password:       Rails.application.secrets.SMTP_SERVER_PASSWORD,
+    address:        ENV["SMTP_SERVER_ADDRESS"],
+    port:           ENV["SMTP_SERVER_PORT"].to_i,
+    user_name:      ENV["SMTP_SERVER_USERNAME"],
+    password:       ENV["SMTP_SERVER_PASSWORD"],
     authentication: 'login',
-    domain:         Rails.application.secrets.SMTP_SERVER_DOMAIN,
+    domain:         ENV["SMTP_SERVER_DOMAIN"],
   }
 end

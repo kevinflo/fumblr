@@ -63,15 +63,15 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
 
-  config.action_mailer.default_url_options = { :host => Rails.application.secrets.APP_DOMAIN }
+  config.action_mailer.default_url_options = { :host => ENV["APP_DOMAIN"] }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:        Rails.application.secrets.SMTP_SERVER_ADDRESS,
-    port:           Rails.application.secrets.SMTP_SERVER_PORT.to_i,
-    user_name:      Rails.application.secrets.SMTP_SERVER_USERNAME,
-    password:       Rails.application.secrets.SMTP_SERVER_PASSWORD,
-    domain:         Rails.application.secrets.SMTP_SERVER_DOMAIN,
+    address:        ENV["SMTP_SERVER_ADDRESS"],
+    port:           ENV["SMTP_SERVER_PORT"].to_i,
+    user_name:      ENV["SMTP_SERVER_USERNAME"],
+    password:       ENV["SMTP_SERVER_PASSWORD"],
+    domain:         ENV["SMTP_SERVER_DOMAIN"],
     authentication: :plain
   }
 
