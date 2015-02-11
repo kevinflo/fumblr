@@ -1,34 +1,6 @@
-== README
+This is a super basic CRUD app tumblr clone I whipped up for a code sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
-1. Values to secrets.yml for produciton are as follows
+Values needed in secrets.yml for produciton are as follows
 
 secret_key_base
 mailer_sender
