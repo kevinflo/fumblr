@@ -1,0 +1,6 @@
+<h1>Create Post</h1>
+<%= simple_form_for(@post, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>

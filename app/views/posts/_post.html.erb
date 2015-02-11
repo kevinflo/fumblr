@@ -1,0 +1,17 @@
+<div class="row">
+  <% if user_signed_in? && post.user_id == current_user.id %>
+  <div class="col-xs-10">
+  <% else %>
+  <div class="col-xs-12">
+  <% end %>
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+    <small><%= post.created_at.to_time.strftime('%b %e at %I %M %p') %></small>
+  </div>
+  <% if user_signed_in? && post.user_id == current_user.id %>
+    <div class="col-xs-2 text-right">
+      <%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, post_path(post), method: "delete" %>
+    </div>
+  <% end %>
+</div>
+<hr>
